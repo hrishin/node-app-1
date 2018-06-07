@@ -1,8 +1,8 @@
-= REST API Level 0 - Spring Boot Booster
+= REST API Level 0 - Node.js Booster
 
-IMPORTANT: This booster requires Java 8 JDK or greater and Maven 3.3.x or greater.
+IMPORTANT: This booster requires Node.js 8.x or greater and `npm` 5 or greater.
 
-IMPORTANT: As part of the process of creating this booster, developers.redhat.com/launch or the Fabric8 Launcher tool set up a project with a CI/CD deployment of this booster. You can see the status of this deployment in your Single-node OpenShift Cluster or OpenShift Online Web Console.
+IMPORTANT: As part of the process of creating this booster, developers.redhat.com/launch or the Fabric8 Launcher tool set up a project with a CI/CD deployment of this booster. You can see the status of this deployment in your Single-node OpenShift Cluster or OpenShift Online Web Console. 
 
 == Runing the Booster Locally
 
@@ -10,11 +10,11 @@ To run this booster on your local host:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git clone git@github.com:hrishin/node-app-1
+$ git clone git@github.com:hrishin/node-test
 
-$ cd node-app-1
+$ cd node-test
 
-$ mvn spring-boot:run
+$ npm install && npm start
 ----
 
 == Interacting with the Booster Locally
@@ -38,7 +38,7 @@ To update your booster:
 +
 NOTE: To stop your running booster in a Linux or macOS terminal, use `CTRL+C`. In a Windows command prompt, you can use `CTRL + Break(pause)`.
 
-. Make your change (e.g. edit `src/main/resources/static/index.html`).
+. Make your change (e.g. edit `public/index.html`).
 . Restart your booster.
 . Confirm your change appears.
 
@@ -53,10 +53,10 @@ $ oc login -u developer -p developer
 
 $ oc new-project MY_PROJECT_NAME
 
-$ mvn clean fabric8:deploy -Popenshift
+$ npm install && npm run openshift
 ----
 
 == More Information
-You can learn more about this booster and rest of the Spring Boot runtime in the link:http://appdev.openshift.io/docs/spring-boot-runtime.html[Spring Boot Runtime Guide].
+You can learn more about this booster and rest of the Node.js runtime in the link:http://appdev.openshift.io/docs/nodejs-runtime.html[Node.js Runtime Guide].
 
-NOTE: Run the set of integration tests included with this booster using `mvn clean verify -Popenshift,openshift-it`.
+
